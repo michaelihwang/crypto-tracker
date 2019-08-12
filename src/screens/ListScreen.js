@@ -30,7 +30,7 @@ class ListScreen extends Component {
 
   componentDidMount() {
     const { fetchLatestCoinData } = this.props;
-    fetchLatestCoinData();
+    //fetchLatestCoinData();
   }
 
   handlePullToRefresh = () => {
@@ -41,12 +41,10 @@ class ListScreen extends Component {
 
 
   renderCryptoCard = ({ item }) => {
-    const { isFetching } = this.props;
     const { cmc_rank, id, name, quote, symbol } = item;
     const { percent_change_24h, price } = quote.USD;
     return (
       <CryptoCard
-        isFetching={isFetching}
         cmcId={id}
         cmcRank={cmc_rank}
         coinName={name}

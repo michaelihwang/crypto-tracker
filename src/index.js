@@ -13,10 +13,7 @@ EStyleSheet.build({
   $negativeChange: '#DF7060',
   $positiveChange: '#8FCA88',
 
-  $coinbase: '#1652F0',
-  $bitcoin: '#F2A900',
-  $ethereum: '#6580E3',
-  $litecoin: '#A5A8A9',
+  $coinbase: '#1652F0'
 });
 
 export default () => (
