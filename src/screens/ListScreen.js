@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 
 import { CryptoCard } from '../components/CryptoCard';
@@ -30,7 +31,7 @@ class ListScreen extends Component {
 
   componentDidMount() {
     const { fetchLatestCoinData } = this.props;
-    //fetchLatestCoinData();
+    fetchLatestCoinData();
   }
 
   handlePullToRefresh = () => {
@@ -38,7 +39,13 @@ class ListScreen extends Component {
     fetchLatestCoinData();
   }
 
-
+  renderLastFetchedDate = () => {
+    const { status } = this.props;
+    const { timestamp } = status;
+    return (
+      'Last fetched: ' + moment(timestamp).format('hh:mm:ss A, MMMM D, YYYY')
+    );
+  }
 
   renderCryptoCard = ({ item }) => {
     const { cmc_rank, id, name, quote, symbol } = item;
@@ -65,7 +72,7 @@ class ListScreen extends Component {
   _keyExtractor = (item, index) => index.toString();
 
   render() {
-    const { navigation, isFetching, data } = this.props;
+    const { isFetching, data } = this.props;
     return (
       <View style={{ backgroundColor: 'white', flex: 1 }}> 
         <StatusBar translucent='false' barStyle='dark-content' />
@@ -76,8 +83,9 @@ class ListScreen extends Component {
               <RefreshControl
                 refreshing={isFetching}
                 onRefresh={this.handlePullToRefresh}
+                title={this.renderLastFetchedDate()}
               />
-              }
+            }
             renderItem={this.renderCryptoCard}
             keyExtractor={this._keyExtractor}
             ItemSeparatorComponent={this.renderSeparator}
