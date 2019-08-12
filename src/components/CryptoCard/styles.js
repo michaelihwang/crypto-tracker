@@ -33,24 +33,24 @@ export default EStyleSheet.create({
   symbolContainer: {
     flex: 1,
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
   nameContainer: {
     flex: 1,
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
 
   // containers in rightBlock
   latestPriceContainer: {
     flex: 1,
     alignItems: 'flex-end',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
   percentChangeContainer: {
     flex: 1,
     alignItems: 'flex-end',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
 
   // CryptoCard texts
@@ -63,7 +63,7 @@ export default EStyleSheet.create({
   },
   symbolText: {
     color: 'black',
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     marginLeft: 10
@@ -76,7 +76,7 @@ export default EStyleSheet.create({
   },
   latestPriceText: {
     color: '$coinbase',
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '600',
     textAlign: 'center'
   },

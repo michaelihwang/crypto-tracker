@@ -64,7 +64,7 @@ class ListScreen extends Component {
 
   renderSeparator = () => (
     <View style={{ paddingLeft: 10, paddingRight: 10 }}>
-      <View style={{ backgroundColor: 'gray', height: 1 }} />
+      <View style={{ backgroundColor: '#758496', height: 1 }} />
     </View>
   );
 
@@ -75,7 +75,7 @@ class ListScreen extends Component {
     const { isFetching, data } = this.props;
     return (
       <View style={{ backgroundColor: 'white', flex: 1 }}> 
-        <StatusBar translucent='false' barStyle='dark-content' />
+        <StatusBar translucent='false' barStyle='light-content' />
         <View style={{ flexGrow: 1, justifyContent: 'flex-start' }}>
           <FlatList
             data={data}
