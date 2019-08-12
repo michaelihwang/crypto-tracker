@@ -19,8 +19,7 @@ export default EStyleSheet.create({
 
   // containers in leftBlock
   iconContainer: {
-    backgroundColor: 'blue',
-    width: 50
+    width: 32
   },
   coinIdContainer: {
     flex: 1,
@@ -54,25 +53,25 @@ export default EStyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginLeft: 5
+    marginLeft: 10
   },
   nameText: {
     color: 'black',
     fontSize: 16,
     textAlign: 'center',
-    marginLeft: 5
+    marginLeft: 10
   },
   latestPriceText: {
     color: 'black',
     fontSize: 16,
     fontWeight: '600',
     textAlign: 'center',
-    marginRight: 5
+    marginRight: 10
   },
   percentChangeText: {
     fontSize: 16,
     textAlign: 'center',
-    marginRight: 5
+    marginRight: 10
   },
   negative: {
     color: '$negativeChange',

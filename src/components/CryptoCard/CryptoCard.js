@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
@@ -27,11 +27,14 @@ class CryptoCard extends Component {
   }
 
   renderLeftBlock = () => {
-    const { coinSymbol, coinName } = this.props;
+    const { cmcId, cmcRank, coinName, coinSymbol } = this.props;
     return (
       <View style={styles.leftBlock}>
-        <View style={styles.iconContainer}>
-        </View>
+        <Image
+          source={{ uri: `https://s2.coinmarketcap.com/static/img/coins/32x32/${cmcId}.png` }}
+          style={styles.iconContainer}
+          resizeMode={'contain'}
+        />
         <View style={styles.coinIdContainer}>
           <View style={styles.symbolContainer}>
             <Text style={styles.symbolText}>{coinSymbol}</Text>
@@ -93,8 +96,10 @@ class CryptoCard extends Component {
 
 CryptoCard.propTypes = {
   isFetching: PropTypes.bool,
-  coinSymbol: PropTypes.string,
+  cmcId: PropTypes.number,
+  cmcRank: PropTypes.number,
   coinName: PropTypes.string,
+  coinSymbol: PropTypes.string,
   latestPrice: PropTypes.number,
   percentChange24h: PropTypes.number
 };
