@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { FlatList, StatusBar, View } from 'react-native';
+import {
+  FlatList,
+  RefreshControl,
+  StatusBar,
+  View
+} from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -28,15 +33,24 @@ class ListScreen extends Component {
     fetchLatestCoinData();
   }
 
+  handlePullToRefresh = () => {
+    const { fetchLatestCoinData } = this.props;
+    fetchLatestCoinData();
+  }
+
+
+
   renderCryptoCard = ({ item }) => {
     const { isFetching } = this.props;
-    const { name, symbol, quote } = item;
+    const { cmc_rank, id, name, quote, symbol } = item;
     const { percent_change_24h, price } = quote.USD;
     return (
       <CryptoCard
         isFetching={isFetching}
-        coinSymbol={symbol}
+        cmcId={id}
+        cmcRank={cmc_rank}
         coinName={name}
+        coinSymbol={symbol}
         latestPrice={price}
         percentChange24h={percent_change_24h}
       />
@@ -53,13 +67,19 @@ class ListScreen extends Component {
   _keyExtractor = (item, index) => index.toString();
 
   render() {
-    const { navigation, data } = this.props;
+    const { navigation, isFetching, data } = this.props;
     return (
       <View style={{ backgroundColor: 'white', flex: 1 }}> 
         <StatusBar translucent='false' barStyle='dark-content' />
         <View style={{ flexGrow: 1, justifyContent: 'flex-start' }}>
           <FlatList
             data={data}
+            refreshControl={
+              <RefreshControl
+                refreshing={isFetching}
+                onRefresh={this.handlePullToRefresh}
+              />
+              }
             renderItem={this.renderCryptoCard}
             keyExtractor={this._keyExtractor}
             ItemSeparatorComponent={this.renderSeparator}

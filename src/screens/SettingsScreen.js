@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, StatusBar } from 'react-native';
+import { ScrollView, StatusBar, View } from 'react-native';
 
 class SettingsScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
