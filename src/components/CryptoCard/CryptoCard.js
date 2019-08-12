@@ -27,11 +27,14 @@ class CryptoCard extends Component {
   }
 
   renderLeftBlock = () => {
-    const { cmcId, cmcRank, coinName, coinSymbol } = this.props;
+    const { cmcRank, cmcId, coinName, coinSymbol } = this.props;
     return (
       <View style={styles.leftBlock}>
+        <View style={styles.rankContainer}>
+          <Text style={styles.rankText}>#{cmcRank}</Text>
+        </View>
         <Image
-          source={{ uri: `https://s2.coinmarketcap.com/static/img/coins/32x32/${cmcId}.png` }}
+          source={{ uri: `https://s2.coinmarketcap.com/static/img/coins/64x64/${cmcId}.png` }}
           style={styles.iconContainer}
           resizeMode={'contain'}
         />
@@ -53,7 +56,7 @@ class CryptoCard extends Component {
       <View style={styles.rightBlock}>
         <View style={styles.latestPriceContainer}>
           <Text style={styles.latestPriceText}>
-            { this.handlePriceFormat(latestPrice) }
+            ${ this.handlePriceFormat(latestPrice) }
           </Text>
         </View>
         <View style={styles.percentChangeContainer}>
@@ -73,29 +76,17 @@ class CryptoCard extends Component {
     );
   }
 
-  renderLoading = () => (
-    <View style={styles.cardContainer}>
-      {'LOADING'}
-    </View>
-  );
-
-  renderCard = () => (
-    <View style={styles.cardContainer}>
-      {this.renderLeftBlock()}
-      {this.renderRightBlock()}
-    </View>
-  );
-
   render() {
-    const { isFetching } = this.props;
     return (
-      isFetching ? this.renderLoading() : this.renderCard()
+      <View style={styles.cardContainer}>
+        {this.renderLeftBlock()}
+        {this.renderRightBlock()}
+      </View>
     );
   }
 }
 
 CryptoCard.propTypes = {
-  isFetching: PropTypes.bool,
   cmcId: PropTypes.number,
   cmcRank: PropTypes.number,
   coinName: PropTypes.string,

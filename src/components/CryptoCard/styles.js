@@ -9,20 +9,26 @@ export default EStyleSheet.create({
     paddingVertical: 5
   },
   leftBlock: {
-    flex: 3,
+    flex: 7,
     flexDirection: 'row'
   },
   rightBlock: {
-    flex: 2,
+    flex: 3,
     flexDirection: 'column'
   },
 
   // containers in leftBlock
+  rankContainer: {
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
   iconContainer: {
+    flex: 1,
     width: 32
   },
   coinIdContainer: {
-    flex: 1,
+    flex: 3
   },
   symbolContainer: {
     flex: 1,
@@ -48,6 +54,13 @@ export default EStyleSheet.create({
   },
 
   // CryptoCard texts
+  rankText: {
+    color: 'black',
+    fontSize: 16,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginRight: 5
+  },
   symbolText: {
     color: 'black',
     fontSize: 16,
@@ -56,22 +69,20 @@ export default EStyleSheet.create({
     marginLeft: 10
   },
   nameText: {
-    color: 'black',
+    color: '$darkGray',
     fontSize: 16,
     textAlign: 'center',
     marginLeft: 10
   },
   latestPriceText: {
-    color: 'black',
+    color: '$coinbase',
     fontSize: 16,
     fontWeight: '600',
-    textAlign: 'center',
-    marginRight: 10
+    textAlign: 'center'
   },
   percentChangeText: {
     fontSize: 16,
-    textAlign: 'center',
-    marginRight: 10
+    textAlign: 'center'
   },
   negative: {
     color: '$negativeChange',
