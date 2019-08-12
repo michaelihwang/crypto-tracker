@@ -31,10 +31,12 @@ This app uses axios to list the latest prices from CoinMarketCap API.
 ### Developer Account
 1. You must first sign up for a free Developer Portal account. There are two API environments:
 
-- **sandbox.coinmarketcap.com** - This testing sandbox has free access to all endpoints and all subscription plans to test with a snapshot of our market data.
-- **pro.coinmarketcap.com** - This is our live production environment with the latest market data. Select the free Basic plan if it meets your needs or upgrade to a paid tier.
+- **sandbox.coinmarketcap.com** - This testing sandbox has free access to all endpoints and all subscription plans to test with a snapshot of CoinMarketCap's market data.
+- **pro.coinmarketcap.com** - This is CoinMarketCap's live production environment with the latest market data. Select the free Basic Plan if it meets your needs or upgrade to a paid tier.
 
 2. Log into the Developer Portal and copy your API Key.
+
+NOTE: Free Basic Plan allows 333 API Calls daily and up to 10,000 API Calls monthly.
 
 ### API Call
 I've used `redux-thunk` and created the following `redux` action to asynchronously fetch from CoinMarketCap.
