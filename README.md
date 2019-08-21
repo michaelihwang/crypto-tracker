@@ -3,17 +3,20 @@ React Native with Redux App for keeping track of top 100 cryptocurrency prices v
 
 ![](example.gif)
 
-This project was bootstrapped with Expo `$ expo init crypto-tracker`.
+This project was bootstrapped with Expo `$ expo init crypto-tracker-app`.
 
-## Expo, React, React Native, and Redux
+## React, React Native, and Redux
 ### Version
-* [Expo](https://github.com/expo/expo): 33.0.0
 * [expo-cli](https://github.com/expo/expo-cli): 3.0.9
 * [react](https://github.com/facebook/react): 16.8.3
 * [react-native](https://github.com/facebook/react-native): 0.57.1
 * [redux](https://github.com/reduxjs/redux): 4.0.4
 
 ### Dependencies
+* [axios](https://github.com/axios/axios): 0.19.0
+* [expo](https://github.com/expo/expo): 33.0.0
+* [moment.js](https://github.com/moment/moment): 2.24.0
+* [prop-types](https://github.com/facebook/prop-types): 15.7.2
 * [react-navigation](https://github.com/react-navigation/react-navigation): 3.11.0
 * [react-native-gesture-handler](https://github.com/kmagiera/react-native-gesture-handler): 1.3.0
 * [react-native-reanimated](https://github.com/kmagiera/react-native-reanimated): 1.1.0
@@ -21,9 +24,6 @@ This project was bootstrapped with Expo `$ expo init crypto-tracker`.
 * [react-redux](https://github.com/reduxjs/react-redux): 7.1.0
 * [redux-logger](https://github.com/LogRocket/redux-logger): 3.0.6
 * [redux-thunk](https://github.com/reduxjs/redux-thunk): 2.3.0
-* [axios](https://github.com/axios/axios): 0.19.0
-* [prop-types](https://github.com/facebook/prop-types): 15.7.2
-* [moment.js](https://github.com/moment/moment): 2.24.0
 
 ## CoinMarketCap API
 This app uses axios to list the latest prices from CoinMarketCap API.
