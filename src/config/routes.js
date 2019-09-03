@@ -5,8 +5,8 @@ import {
   createStackNavigator
 } from 'react-navigation';
 
-import ListScreen from '../screens/ListScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import { ListScreen } from '../screens/ListScreen';
+import { SettingsScreen } from '../screens/SettingsScreen';
 
 import { Ionicons } from '@expo/vector-icons';
 
