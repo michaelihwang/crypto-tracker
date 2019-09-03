@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { SANDBOX_API_KEY, PRO_API_KEY } from '../config/config';
+
 export const FETCH_COIN_DATA_BEGIN = 'FETCH_COIN_DATA_BEGIN';
 export const FETCH_COIN_DATA_SUCCESS = 'FETCH_COIN_DATA_SUCCESS';
 export const FETCH_COIN_DATA_FAIL = 'FETCH_COIN_DATA_FAIL';
@@ -8,7 +10,7 @@ export const FETCH_COIN_DATA_FAIL = 'FETCH_COIN_DATA_FAIL';
 const SANDBOX_MODE = true;
 
 // API Key * GET YOUR OWN API KEY! *
-const API_KEY = '';
+const API_KEY = SANDBOX_API_KEY;
 
 let BASE_URL = 'http://pro-api.coinmarketcap.com';
 if (SANDBOX_MODE) {
