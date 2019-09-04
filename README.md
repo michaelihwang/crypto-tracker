@@ -60,7 +60,7 @@ export const fetchLatestCoinData = () => (dispatch) => (
 ```
 
 ### API Response
-The following is the End Point response payload format. All endpoints return JSON format.
+The following is the /latest response payload format. All endpoints return JSON format.
 
 ```
 {
