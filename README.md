@@ -1,4 +1,4 @@
-# CryptoTracker App
+# CryptoTracker
 React Native with Redux App for keeping track of top 100 cryptocurrency prices via CoinMarketCap API.
 
 ![](example.gif)
@@ -45,7 +45,7 @@ There are several endpoints offered by CoinMarketCap; this app currently only us
 
 ```
 // API Key * GET YOUR OWN API KEY! *
-const API_KEY = ''
+const API_KEY = SANDBOX_API_KEY;'
 
 const BASE_URL = 'http://sandbox-api.coinmarketcap.com';  // or 'http://pro-api.coinmarketcap.com' for production
 const END_POINT = '/v1/cryptocurrency/listings/latest'
