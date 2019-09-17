@@ -5,8 +5,8 @@ import {
   StatusBar,
   View
 } from 'react-native';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 
