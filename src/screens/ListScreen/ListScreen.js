@@ -66,7 +66,7 @@ class ListScreen extends Component {
 
   renderSeparator = () => (
     <View style={{ paddingHorizontal: 10 }}>
-      <View style={style.separator} />
+      <View style={styles.separator} />
     </View>
   );
 
@@ -102,7 +102,7 @@ propTypes = {
   navigation: PropTypes.object,
   dispatch: PropTypes.func,
   isFetching: PropTypes.bool,
-  data: PropTypes.object,
+  data: PropTypes.array,
   status: PropTypes.object,
 };
 
