@@ -9,10 +9,8 @@ EStyleSheet.build({
   $lightGray: '#F2F3F7',
   $medGray: '#758496',
   $darkGray: '#343434',
-
   $negativeChange: '#DF7060',
   $positiveChange: '#8FCA88',
-
   $coinbase: '#1652F0'
 });
 

@@ -6,12 +6,17 @@ import {
 } from 'react-navigation';
 
 import { ListScreen } from '../screens/ListScreen';
+import { ConversionScreen } from '../screens/ConversionScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 
 import { Ionicons } from '@expo/vector-icons';
 
 const ListStack = createStackNavigator({
   List: ListScreen
+});
+
+const ConversionStack = createStackNavigator({
+  Conversion: ConversionScreen
 });
 
 const SettingsStack = createStackNavigator({
@@ -21,6 +26,9 @@ const SettingsStack = createStackNavigator({
 const TabNavigator = createBottomTabNavigator({
   List: {
     screen: ListStack
+  },
+  Conversion: {
+    screen: ConversionStack
   },
   Settings: {
     screen: SettingsStack
@@ -33,6 +41,9 @@ const TabNavigator = createBottomTabNavigator({
         switch (routeName) {
           case 'List':
             icon = 'ios-list';
+            break;
+          case 'Conversion':
+            icon = 'ios-swap';
             break;
           case 'Settings':
             icon = 'ios-cog';
